@@ -1,0 +1,16 @@
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.exe.config
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.exe
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.pdb
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csprojAssemblyReference.cache
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MainWindow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\App.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk_MarkupCompile.cache
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk_MarkupCompile.lref
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MainWindow.baml
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.g.resources
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.Properties.Resources.resources
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csproj.GenerateResource.cache
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csproj.CoreCompileInputs.cache
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.exe
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.pdb
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\App.baml
