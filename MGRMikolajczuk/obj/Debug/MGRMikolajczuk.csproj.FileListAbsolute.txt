@@ -2,11 +2,9 @@ C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.exe.c
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.exe
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.pdb
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csprojAssemblyReference.cache
-C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MainWindow.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\App.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk_MarkupCompile.cache
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk_MarkupCompile.lref
-C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MainWindow.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.g.resources
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.Properties.Resources.resources
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csproj.GenerateResource.cache
@@ -14,3 +12,12 @@ C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.cspro
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.exe
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.pdb
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\App.baml
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\App_data\CaffeBase.mdf
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\App_data\CaffeBase_log.ldf
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk_Content.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderWindow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderWindow.baml
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\NewProductsWindow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\NewProductsWindow.baml
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\LoginWindow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\LoginWindow.baml
