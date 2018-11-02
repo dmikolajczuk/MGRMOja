@@ -76,11 +76,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Caffe.dbml</DependentUpon>
     </Compile>
-    <Compile Include="View\NewProductsWindow.xaml.cs">
-      <DependentUpon>NewProductsWindow.xaml</DependentUpon>
+    <Compile Include="Model\Singleton.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="View\NewOrderWidnow.xaml.cs">
+      <DependentUpon>NewOrderWidnow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OrderWindow.xaml.cs">
-      <DependentUpon>OrderWindow.xaml</DependentUpon>
+    <Compile Include="View\OrderDetailWindow.xaml.cs">
+      <DependentUpon>OrderDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AllOrdersWindow.xaml.cs">
+      <DependentUpon>AllOrdersWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -95,11 +100,15 @@
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\NewProductsWindow.xaml">
+    <Page Include="View\NewOrderWidnow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\OrderWindow.xaml">
+    <Page Include="View\OrderDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AllOrdersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

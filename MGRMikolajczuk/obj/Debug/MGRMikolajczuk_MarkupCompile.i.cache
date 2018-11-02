@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\App.xaml
-3-2000984872
+41894916306
 2876184771
-13-809377351
+161530429854
 14-1075893376
-View\LoginWindow.xaml;View\NewProductsWindow.xaml;View\OrderWindow.xaml;
+View\LoginWindow.xaml;View\NewOrderWidnow.xaml;View\OrderDetailWindow.xaml;View\AllOrdersWindow.xaml;
 
-False
+True
 

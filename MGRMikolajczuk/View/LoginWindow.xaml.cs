@@ -73,9 +73,9 @@ namespace MGRMikolajczuk
             }
             else
             {
-                OrderWindow orderWindow = new OrderWindow(user);
+                AllOrdersWindow allOrdersWindow = new AllOrdersWindow(user);
                 this.Close();
-                orderWindow.Show();
+                allOrdersWindow.Show();
             }
         }
     }

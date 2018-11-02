@@ -15,9 +15,11 @@ C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\App.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\App_data\CaffeBase.mdf
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\App_data\CaffeBase_log.ldf
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk_Content.g.cs
-C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderWindow.g.cs
-C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderWindow.baml
-C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\NewProductsWindow.g.cs
-C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\NewProductsWindow.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\LoginWindow.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\LoginWindow.baml
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\NewOrderWidnow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\NewOrderWidnow.baml
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderDetailWindow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AllOrdersWindow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderDetailWindow.baml
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AllOrdersWindow.baml
