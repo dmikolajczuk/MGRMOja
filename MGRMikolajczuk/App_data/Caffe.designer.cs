@@ -36,6 +36,9 @@ namespace MGRMikolajczuk.App_data
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
+    partial void InsertPaymentSystem(PaymentSystem instance);
+    partial void UpdatePaymentSystem(PaymentSystem instance);
+    partial void DeletePaymentSystem(PaymentSystem instance);
     partial void InsertOrder(Order instance);
     partial void UpdateOrder(Order instance);
     partial void DeleteOrder(Order instance);
@@ -87,6 +90,14 @@ namespace MGRMikolajczuk.App_data
 			get
 			{
 				return this.GetTable<Product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PaymentSystem> PaymentSystems
+		{
+			get
+			{
+				return this.GetTable<PaymentSystem>();
 			}
 		}
 		
@@ -257,6 +268,8 @@ namespace MGRMikolajczuk.App_data
 		
 		private System.Nullable<double> _Price;
 		
+		private string _Category;
+		
 		private EntitySet<OrderItem> _OrderItems;
 		
     #region Extensibility Method Definitions
@@ -269,6 +282,8 @@ namespace MGRMikolajczuk.App_data
     partial void OnNameChanged();
     partial void OnPriceChanging(System.Nullable<double> value);
     partial void OnPriceChanged();
+    partial void OnCategoryChanging(string value);
+    partial void OnCategoryChanged();
     #endregion
 		
 		public Product()
@@ -337,6 +352,26 @@ namespace MGRMikolajczuk.App_data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="VarChar(50)")]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this.OnCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._Category = value;
+					this.SendPropertyChanged("Category");
+					this.OnCategoryChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_OrderItem", Storage="_OrderItems", ThisKey="Id_Product", OtherKey="Id_Product")]
 		public EntitySet<OrderItem> OrderItems
 		{
@@ -383,6 +418,120 @@ namespace MGRMikolajczuk.App_data
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PaymentSystem")]
+	public partial class PaymentSystem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id_Payment;
+		
+		private string _Payment;
+		
+		private EntitySet<Order> _Orders;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnId_PaymentChanging(int value);
+    partial void OnId_PaymentChanged();
+    partial void OnPaymentChanging(string value);
+    partial void OnPaymentChanged();
+    #endregion
+		
+		public PaymentSystem()
+		{
+			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Payment", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id_Payment
+		{
+			get
+			{
+				return this._Id_Payment;
+			}
+			set
+			{
+				if ((this._Id_Payment != value))
+				{
+					this.OnId_PaymentChanging(value);
+					this.SendPropertyChanging();
+					this._Id_Payment = value;
+					this.SendPropertyChanged("Id_Payment");
+					this.OnId_PaymentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment", DbType="VarChar(50)")]
+		public string Payment
+		{
+			get
+			{
+				return this._Payment;
+			}
+			set
+			{
+				if ((this._Payment != value))
+				{
+					this.OnPaymentChanging(value);
+					this.SendPropertyChanging();
+					this._Payment = value;
+					this.SendPropertyChanged("Payment");
+					this.OnPaymentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PaymentSystem_Order", Storage="_Orders", ThisKey="Id_Payment", OtherKey="PaymentSystem")]
+		public EntitySet<Order> Orders
+		{
+			get
+			{
+				return this._Orders;
+			}
+			set
+			{
+				this._Orders.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.PaymentSystem1 = this;
+		}
+		
+		private void detach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.PaymentSystem1 = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Orders")]
 	public partial class Order : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -395,11 +544,17 @@ namespace MGRMikolajczuk.App_data
 		
 		private System.Nullable<System.DateTime> _Date;
 		
+		private System.Nullable<bool> _Ended;
+		
+		private System.Nullable<int> _PaymentSystem;
+		
 		private System.Nullable<int> _Id_User;
 		
 		private EntitySet<OrderItem> _OrderItems;
 		
 		private EntityRef<User> _User;
+		
+		private EntityRef<PaymentSystem> _PaymentSystem1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -411,6 +566,10 @@ namespace MGRMikolajczuk.App_data
     partial void OnSumChanged();
     partial void OnDateChanging(System.Nullable<System.DateTime> value);
     partial void OnDateChanged();
+    partial void OnEndedChanging(System.Nullable<bool> value);
+    partial void OnEndedChanged();
+    partial void OnPaymentSystemChanging(System.Nullable<int> value);
+    partial void OnPaymentSystemChanged();
     partial void OnId_UserChanging(System.Nullable<int> value);
     partial void OnId_UserChanged();
     #endregion
@@ -419,6 +578,7 @@ namespace MGRMikolajczuk.App_data
 		{
 			this._OrderItems = new EntitySet<OrderItem>(new Action<OrderItem>(this.attach_OrderItems), new Action<OrderItem>(this.detach_OrderItems));
 			this._User = default(EntityRef<User>);
+			this._PaymentSystem1 = default(EntityRef<PaymentSystem>);
 			OnCreated();
 		}
 		
@@ -478,6 +638,50 @@ namespace MGRMikolajczuk.App_data
 					this._Date = value;
 					this.SendPropertyChanged("Date");
 					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ended", DbType="Bit")]
+		public System.Nullable<bool> Ended
+		{
+			get
+			{
+				return this._Ended;
+			}
+			set
+			{
+				if ((this._Ended != value))
+				{
+					this.OnEndedChanging(value);
+					this.SendPropertyChanging();
+					this._Ended = value;
+					this.SendPropertyChanged("Ended");
+					this.OnEndedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentSystem", DbType="Int")]
+		public System.Nullable<int> PaymentSystem
+		{
+			get
+			{
+				return this._PaymentSystem;
+			}
+			set
+			{
+				if ((this._PaymentSystem != value))
+				{
+					if (this._PaymentSystem1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPaymentSystemChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentSystem = value;
+					this.SendPropertyChanged("PaymentSystem");
+					this.OnPaymentSystemChanged();
 				}
 			}
 		}
@@ -549,6 +753,40 @@ namespace MGRMikolajczuk.App_data
 						this._Id_User = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PaymentSystem_Order", Storage="_PaymentSystem1", ThisKey="PaymentSystem", OtherKey="Id_Payment", IsForeignKey=true)]
+		public PaymentSystem PaymentSystem1
+		{
+			get
+			{
+				return this._PaymentSystem1.Entity;
+			}
+			set
+			{
+				PaymentSystem previousValue = this._PaymentSystem1.Entity;
+				if (((previousValue != value) 
+							|| (this._PaymentSystem1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PaymentSystem1.Entity = null;
+						previousValue.Orders.Remove(this);
+					}
+					this._PaymentSystem1.Entity = value;
+					if ((value != null))
+					{
+						value.Orders.Add(this);
+						this._PaymentSystem = value.Id_Payment;
+					}
+					else
+					{
+						this._PaymentSystem = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PaymentSystem1");
 				}
 			}
 		}

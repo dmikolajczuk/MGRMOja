@@ -15,18 +15,6 @@ namespace MGRMikolajczuk.Model
         protected Singleton()
         {
             orderList = new List<Order>();
-
-            orderList.Add(new Order()
-            {
-                _name = "Zamowienie1",
-                _sum = 55.66
-            });
-
-            orderList.Add(new Order()
-            {
-                _name = "Zamowienie2",
-                _sum = 11.11
-            });
         }
 
         public static Singleton Instance

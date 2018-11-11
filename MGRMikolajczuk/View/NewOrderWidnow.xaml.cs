@@ -28,14 +28,20 @@ namespace MGRMikolajczuk.View
             InitializeComponent();
             singleton = Singleton.Instance;
             allOrdersWindow = aallw;
+
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
             singleton.orderList.Add(new Order()
             {
-                _name = "Zamowienie3",
+                _name = NameLabel.Text,
                 _sum = 0.00
 
             });
             allOrdersWindow.DispayactiveOrders();
-            //this.Close();
+            this.Close();
         }
     }
 }

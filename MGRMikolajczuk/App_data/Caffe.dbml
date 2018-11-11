@@ -13,7 +13,15 @@
       <Column Name="Id_Product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Product_OrderItem" Member="OrderItems" ThisKey="Id_Product" OtherKey="Id_Product" Type="OrderItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaymentSystem" Member="PaymentSystems">
+    <Type Name="PaymentSystem">
+      <Column Name="Id_Payment" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Payment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="PaymentSystem_Order" Member="Orders" ThisKey="Id_Payment" OtherKey="PaymentSystem" Type="Order" />
     </Type>
   </Table>
   <Table Name="dbo.Orders" Member="Orders">
@@ -21,9 +29,12 @@
       <Column Name="Id_Order" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Sum" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ended" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PaymentSystem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Id_User" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Order_OrderItem" Member="OrderItems" ThisKey="Id_Order" OtherKey="Id_Order" Type="OrderItem" />
       <Association Name="User_Order" Member="User" ThisKey="Id_User" OtherKey="Id_user" Type="User" IsForeignKey="true" />
+      <Association Name="PaymentSystem_Order" Member="PaymentSystem1" ThisKey="PaymentSystem" OtherKey="Id_Payment" Type="PaymentSystem" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.OrderItem" Member="OrderItems">

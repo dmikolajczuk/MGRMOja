@@ -63,6 +63,7 @@ namespace MGRMikolajczuk.View
 
                 Button b = new Button();
                 b.Content = "Otworz zamówienie";
+                b.Tag = item._name;
                 b.Click += OrderDetail;
                 Style s = this.FindResource("ButtonShadow") as Style;
                 b.Style = s;
@@ -82,7 +83,11 @@ namespace MGRMikolajczuk.View
 
         private void OrderDetail(object sender, RoutedEventArgs e)
         {
-            NewProductsWindow np = new NewProductsWindow();
+            Button button =(Button)sender;
+            object orderstring = button.Tag;
+            var o = _singleton.orderList.FirstOrDefault(s => s._name.Equals(orderstring));
+            Console.WriteLine(o.ToString());
+            OrderDetailWindow np = new OrderDetailWindow(o);
             np.Show();
         }
     }

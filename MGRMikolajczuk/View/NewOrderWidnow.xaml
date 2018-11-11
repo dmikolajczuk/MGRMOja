@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MGRMikolajczuk.View"
         mc:Ignorable="d"
-        Title="NewOrder" Height="450" Width="300">
-    <Grid Margin="0,100" HorizontalAlignment="Center" VerticalAlignment="Center">
+        Title="NewOrder" Height="300" Width="500">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox Text=""/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal"  DockPanel.Dock="Top" >
+            <Label Content="Nazwa zamówienia" Margin="20,0,0,0" FontSize="20"/>
+            <TextBox  x:Name="NameLabel" Text="" FontSize="20" Width="100" />
+        </StackPanel>
+        <Button Grid.Row="1" Margin="20,20" Height="30" Width="200" Content="Dodaj zamówienie" Style="{StaticResource ButtonShadow}" Click="Button_Click"/>
     </Grid>
 </Window>
