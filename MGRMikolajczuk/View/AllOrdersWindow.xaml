@@ -9,7 +9,8 @@
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
             <Image Source="../Image/userIcon.png" Height="30"/>
-            <TextBlock x:Name="userLabel" TextAlignment="Right"  Margin="0,8,20,0" Text="USERRRR"/>
+            <TextBlock x:Name="userLabel" TextAlignment="Right"  Margin="0,8,10,0" Text="USERRRR"/>
+            <Button x:Name="LogoutButton" Style="{StaticResource ButtonShadow}" Content="Wyloguj" Click="LogoutButton_OnClick"/>
         </StackPanel>
         
         <Grid DockPanel.Dock="Top">

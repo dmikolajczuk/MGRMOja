@@ -18,5 +18,17 @@ namespace MGRMikolajczuk.Model
             _productList = new List<Product>();
             _sum = 0;
         }
+
+        public void CalculateSum()
+        {
+            double? a = _productList.Sum(s=> s.Price);
+            _sum = (double)a;
+            //Console.WriteLine(_sum);
+        }
+
+        public void AddProduct(Product p)
+        {
+            _productList.Add(p);
+        }
     }
 }

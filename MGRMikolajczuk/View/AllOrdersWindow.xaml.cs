@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MGRMikolajczuk.App_data;
 using MGRMikolajczuk.Model;
-using Order = MGRMikolajczuk.App_data.Order;
 
 namespace MGRMikolajczuk.View
 {
@@ -31,7 +30,7 @@ namespace MGRMikolajczuk.View
 
             InitializeComponent();
             setUserlabel();
-            DispayactiveOrders();
+            DispayActiveOrders();
         }
 
         private void ButtonNewOrderClick(object sender, RoutedEventArgs e)
@@ -45,38 +44,26 @@ namespace MGRMikolajczuk.View
             this.userLabel.Text = _user.Name;
         }
 
-        public void DispayactiveOrders()
+        public void DispayActiveOrders()
         {
+            ComponentFabryk fabryka = new ComponentFabryk();
             orderUniformGread.Children.Clear();
 
             foreach (var item in _singleton.orderList)
             {
 
-
-                Panel panel = new Grid();
-                panel.VerticalAlignment = VerticalAlignment.Center;
-                panel.Margin = new Thickness(5,5,5,5);
+                Panel panel = fabryka.GenerateGrid();
                 
                 StackPanel sp = new StackPanel();
-                sp.Children.Add(new TextBlock() {Text = item._name, TextAlignment = TextAlignment.Center,});
-                sp.Children.Add(new TextBlock() { Text = "Suma: "+item._sum + " zł" , TextAlignment = TextAlignment.Center });
+                sp.Children.Add(fabryka.GeneraTextBlock(item._name));
+                string n = "Suma: " + item._sum + " zł";
+                sp.Children.Add(fabryka.GeneraTextBlock(n));
 
-                Button b = new Button();
-                b.Content = "Otworz zamówienie";
-                b.Tag = item._name;
+                Button b = fabryka.GenerateButton(item._name);
                 b.Click += OrderDetail;
-                Style s = this.FindResource("ButtonShadow") as Style;
-                b.Style = s;
-                b.Height = 50;
-
                 sp.Children.Add(b);
 
-                panel.Children.Add(new Border()
-                {
-                    BorderBrush = Brushes.Black,
-                    BorderThickness = new Thickness(1),
-                    Child = sp
-                });
+                panel.Children.Add(fabryka.GenerateBorder(sp));
                 orderUniformGread.Children.Add(panel);
             }
         }
@@ -86,9 +73,16 @@ namespace MGRMikolajczuk.View
             Button button =(Button)sender;
             object orderstring = button.Tag;
             var o = _singleton.orderList.FirstOrDefault(s => s._name.Equals(orderstring));
-            Console.WriteLine(o.ToString());
+            //Console.WriteLine(o.ToString());
             OrderDetailWindow np = new OrderDetailWindow(o);
             np.Show();
+        }
+
+        private void LogoutButton_OnClick(object sender, RoutedEventArgs e)
+        {
+          MainWindow mw = new MainWindow();
+            this.Close();
+            mw.Show();
         }
     }
 }

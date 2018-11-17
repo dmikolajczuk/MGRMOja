@@ -23,3 +23,5 @@ C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderDetailWind
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AllOrdersWindow.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderDetailWindow.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AllOrdersWindow.baml
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\EndOrderWindow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\EndOrderWindow.baml

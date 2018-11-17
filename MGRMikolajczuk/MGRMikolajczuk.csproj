@@ -76,8 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Caffe.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Model\ComponentFabryk.cs" />
     <Compile Include="Model\Singleton.cs" />
     <Compile Include="Model\Order.cs" />
+    <Compile Include="View\EndOrderWindow.xaml.cs">
+      <DependentUpon>EndOrderWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\NewOrderWidnow.xaml.cs">
       <DependentUpon>NewOrderWidnow.xaml</DependentUpon>
     </Compile>
@@ -87,6 +91,10 @@
     <Compile Include="View\AllOrdersWindow.xaml.cs">
       <DependentUpon>AllOrdersWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\EndOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

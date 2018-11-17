@@ -1,0 +1,35 @@
+﻿<Window x:Class="MGRMikolajczuk.View.EndOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MGRMikolajczuk.View"
+        mc:Ignorable="d"
+        Title="EndOrderWindow" Height="450" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock x:Name="TextBlockName" Text="Nazwa" FontSize="30"/>
+            <TextBlock x:Name="TextBlockSum" Text="Suma" FontSize="20" FontWeight="Bold"/>
+        </StackPanel>
+        <GroupBox Grid.Row="1">
+            <GroupBox.Header>
+                <TextBlock Text="Rodzaj płatności" FontSize="20"/>
+            </GroupBox.Header>
+            <UniformGrid Rows="2">
+                <RadioButton x:Name="CartRadioButton" Content="Karta"/>
+                <RadioButton x:Name="CashRadioButton" Content="Gotówka" IsChecked="True"/>
+            </UniformGrid>
+        </GroupBox>
+
+        <TextBlock Grid.Row="2" Text="TU RABAT" FontSize="80"/>
+
+        <Button Grid.Row="3" Content="Zakończ" Click="ClickEndOrder" Margin="20,20" Style="{StaticResource ButtonShadow}"/>
+    </Grid>
+</Window>

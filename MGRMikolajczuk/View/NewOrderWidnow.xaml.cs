@@ -40,7 +40,7 @@ namespace MGRMikolajczuk.View
                 _sum = 0.00
 
             });
-            allOrdersWindow.DispayactiveOrders();
+            allOrdersWindow.DispayActiveOrders();
             this.Close();
         }
     }

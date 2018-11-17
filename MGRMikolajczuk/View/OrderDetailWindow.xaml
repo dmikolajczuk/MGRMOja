@@ -12,10 +12,17 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <DockPanel x:Name="DockPanelProcuctList" Grid.Column="0" Margin="10,20,10,10" LastChildFill="False" >
-            <TextBlock Text="Lista poduktów" TextAlignment="Center" FontSize="20" DockPanel.Dock="Top"/>
-            <TextBlock Text="Suma:" TextAlignment="Right" FontSize="20" DockPanel.Dock="Bottom"/>
         </DockPanel>
-        <UniformGrid Grid.Column="1" x:Name="UniformGridNewProduct" Columns="5" Rows="8" Margin="10,10">
-        </UniformGrid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <UniformGrid Grid.Row="0"   x:Name="UniformGridNewProduct" Columns="5" Rows="8" Margin="10,10">
+            </UniformGrid>
+            <UniformGrid Columns="3" Grid.Row="1">
+                <Button Content="Zakończ zamówienie" Grid.Row="1" Style="{StaticResource ButtonShadow}" Click="Button_Click"/>
+            </UniformGrid>
+        </Grid>
     </Grid>
 </Window>
