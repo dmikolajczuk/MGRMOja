@@ -76,7 +76,7 @@ namespace MGRMikolajczuk.View
         {
             var tb = sender as TextBlock;
             var p = order._productList.FirstOrDefault(s => s.Id_Product == (int)tb.Tag);
-            order._productList.Remove(p);
+            order.RemuveProduct(p);
             DisplayProductList();
         }
 

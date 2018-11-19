@@ -12,23 +12,37 @@ namespace MGRMikolajczuk.Model
         public String _name;
         public double _sum;
         public List<Product> _productList;
+        IRabat _rabat;
 
         public Order()
         {
             _productList = new List<Product>();
             _sum = 0;
+            _rabat = new Rabat0();
         }
 
         public void CalculateSum()
         {
-            double? a = _productList.Sum(s=> s.Price);
-            _sum = (double)a;
-            //Console.WriteLine(_sum);
+            double? a = _productList.Sum(s => s.Price);
+
+            double sum = (double)a;
+            _sum = sum - _rabat.CalculateRabat(sum);
+            Console.WriteLine(_sum);
         }
 
         public void AddProduct(Product p)
         {
             _productList.Add(p);
+        }
+
+        public void RemuveProduct(Product p)
+        {
+            _productList.Remove(p);
+        }
+
+        public void SetRabat(IRabat r)
+        {
+            this._rabat = r;
         }
     }
 }

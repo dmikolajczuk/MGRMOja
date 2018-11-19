@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MGRMikolajczuk"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        Background="LightGray">
+        Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <TextBlock DockPanel.Dock="Top" Text="My Caffe" FontSize="35" FontFamily="Algerian" HorizontalAlignment="Center"/>
         <Grid>

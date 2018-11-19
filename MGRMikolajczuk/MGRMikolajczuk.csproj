@@ -77,6 +77,13 @@
       <DependentUpon>Caffe.dbml</DependentUpon>
     </Compile>
     <Compile Include="Model\ComponentFabryk.cs" />
+    <Compile Include="Model\RabatClasses\IRabat.cs" />
+    <Compile Include="Model\RabatClasses\Rabat0.cs" />
+    <Compile Include="Model\RabatClasses\Rabat10.cs" />
+    <Compile Include="Model\RabatClasses\Rabat20.cs" />
+    <Compile Include="Model\RabatClasses\Rabat30.cs" />
+    <Compile Include="Model\RabatClasses\Rabat50.cs" />
+    <Compile Include="Model\RabatFactory.cs" />
     <Compile Include="Model\Singleton.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="View\EndOrderWindow.xaml.cs">

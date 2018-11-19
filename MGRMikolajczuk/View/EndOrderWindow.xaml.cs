@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MGRMikolajczuk.Model;
+using MGRMikolajczuk.Model.RabatClasses;
 
 namespace MGRMikolajczuk.View
 {
@@ -38,6 +39,38 @@ namespace MGRMikolajczuk.View
         {
             TextBlockName.Text = order._name;
             TextBlockSum.Text = order._sum +  " zł";
+        }
+
+        private void ClickBack(object sender, RoutedEventArgs e)
+        {
+            OrderDetailWindow w = new OrderDetailWindow(order);
+            this.Close();
+            w.Show();
+        }
+
+        private void ChekedRabat(object sender, RoutedEventArgs e)
+        {
+            if (order == null)
+                return;
+
+            var radio = sender as RadioButton;
+            string radioName = radio.Name;
+
+            CheckButtonBack(radioName);
+
+            RabatFactory rababaFactory = new RabatFactory();
+            order.SetRabat(rababaFactory.ProductRabat(radioName));
+
+            order.CalculateSum();
+            DisplayOrder();
+        }
+
+        private void CheckButtonBack(string radioName)
+        {
+            if (radioName != "_0RabatRadioButton")
+                BackButton.IsEnabled = false;
+            else
+                BackButton.IsEnabled = true;
         }
     }
 }

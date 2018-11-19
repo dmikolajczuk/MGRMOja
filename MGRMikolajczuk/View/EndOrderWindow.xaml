@@ -10,26 +10,41 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         <StackPanel>
-            <TextBlock x:Name="TextBlockName" Text="Nazwa" FontSize="30"/>
-            <TextBlock x:Name="TextBlockSum" Text="Suma" FontSize="20" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlockName" Text="Nazwa" FontSize="30" TextAlignment="Center"/>
+            <TextBlock x:Name="TextBlockSum" Text="Suma" FontSize="20" FontWeight="Bold" TextAlignment="Center" Foreground="Red"/>
         </StackPanel>
         <GroupBox Grid.Row="1">
             <GroupBox.Header>
                 <TextBlock Text="Rodzaj płatności" FontSize="20"/>
             </GroupBox.Header>
-            <UniformGrid Rows="2">
+            <UniformGrid Rows="2" Columns="2">
                 <RadioButton x:Name="CartRadioButton" Content="Karta"/>
                 <RadioButton x:Name="CashRadioButton" Content="Gotówka" IsChecked="True"/>
+                <RadioButton x:Name="NoneRadioButton" Content="Koszt firmy"/>
             </UniformGrid>
         </GroupBox>
 
-        <TextBlock Grid.Row="2" Text="TU RABAT" FontSize="80"/>
-
-        <Button Grid.Row="3" Content="Zakończ" Click="ClickEndOrder" Margin="20,20" Style="{StaticResource ButtonShadow}"/>
+        <GroupBox Grid.Row="2">
+            <GroupBox.Header>
+                <TextBlock Text="Rabat" FontSize="20"/>
+            </GroupBox.Header>
+            <UniformGrid Rows="2">
+                <RadioButton x:Name="_0RabatRadioButton" Content="Brak rabatu" IsChecked="True" Checked="ChekedRabat"/>
+                <RadioButton x:Name="_10RabatRadioButton" Content="10%" Checked="ChekedRabat"/>
+                <RadioButton x:Name="_20RabatRadioButton" Content="20%" Checked="ChekedRabat"/>
+                <RadioButton x:Name="_30RabatRadioButton" Content="30%" Checked="ChekedRabat"/>
+                <RadioButton x:Name="_50RabatRadioButton" Content="50%(Pracowniczy)" Checked="ChekedRabat"/>
+            </UniformGrid>
+        </GroupBox>
+        <UniformGrid Grid.Row="4" Columns="2">
+            <Button x:Name="BackButton" Content="Wstecz" Click="ClickBack" Margin="20,20" Style="{StaticResource ButtonShadow}" />
+            <Button Content="Zakończ zamówienie" Click="ClickEndOrder" Margin="20,20" Style="{StaticResource ButtonShadow}"/>
+        </UniformGrid>
     </Grid>
 </Window>
