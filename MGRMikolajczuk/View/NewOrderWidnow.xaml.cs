@@ -34,7 +34,7 @@ namespace MGRMikolajczuk.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            singleton.orderList.Add(new Order()
+            singleton.orderList.Add(new OrderClass()
             {
                 _name = NameLabel.Text,
                 _sum = 0.00

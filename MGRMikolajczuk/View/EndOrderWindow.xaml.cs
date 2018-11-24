@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 using MGRMikolajczuk.Model;
 using MGRMikolajczuk.Model.RabatClasses;
 
@@ -22,35 +23,50 @@ namespace MGRMikolajczuk.View
 
     public partial class EndOrderWindow : Window
     {
-        Order order;
-        public EndOrderWindow(Order oo)
+        private OrderClass _orderClass;
+        private User _user;
+        public EndOrderWindow(OrderClass oo, User u)
         {
             InitializeComponent();
-            order = oo;
+            _orderClass = oo;
+            _user = u;
             DisplayOrder();
         }
 
         private void ClickEndOrder(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            AddOrder ad = new AddOrder();
+            ad.Add(_orderClass,_user.Id_user, paymentSystem());
+            this.Close();
+        }
+
+        private string paymentSystem()
+        {
+            if (CartRadioButton.IsChecked == true)
+                return "KARTA";
+            else if (CashRadioButton.IsChecked == true)
+                return "GOTOWKA";
+            else if (NoneRadioButton.IsChecked == true)
+                return "KOSZT_FIRMY";
+            return null;
         }
 
         private void DisplayOrder()
         {
-            TextBlockName.Text = order._name;
-            TextBlockSum.Text = order._sum +  " zł";
+            TextBlockName.Text = _orderClass._name;
+            TextBlockSum.Text = _orderClass._sum + " zł";
         }
 
         private void ClickBack(object sender, RoutedEventArgs e)
         {
-            OrderDetailWindow w = new OrderDetailWindow(order);
+            OrderDetailWindow w = new OrderDetailWindow(_orderClass,_user);
             this.Close();
             w.Show();
         }
 
         private void ChekedRabat(object sender, RoutedEventArgs e)
         {
-            if (order == null)
+            if (_orderClass == null)
                 return;
 
             var radio = sender as RadioButton;
@@ -59,9 +75,9 @@ namespace MGRMikolajczuk.View
             CheckButtonBack(radioName);
 
             RabatFactory rababaFactory = new RabatFactory();
-            order.SetRabat(rababaFactory.ProductRabat(radioName));
+            _orderClass.SetRabat(rababaFactory.ProductRabat(radioName));
 
-            order.CalculateSum();
+            _orderClass.CalculateSum();
             DisplayOrder();
         }
 

@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
-using MGRMikolajczuk.App_data;
 using MGRMikolajczuk.Model;
 using MGRMikolajczuk.View;
 

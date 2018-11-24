@@ -11,9 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MGRMikolajczuk.App_data;
 using MGRMikolajczuk.Model;
-using Order = MGRMikolajczuk.Model.Order;
 
 namespace MGRMikolajczuk.View
 {
@@ -22,13 +20,14 @@ namespace MGRMikolajczuk.View
     /// </summary>
     public partial class OrderDetailWindow : Window
     {
-        private Order order;
+        private OrderClass _orderClass;
+        private User _user;
         private CaffeDataContext db;
-        public OrderDetailWindow(Order o)
+        public OrderDetailWindow(OrderClass o, User u)
         {
             InitializeComponent();
-
-            order = o;
+            _user = u;
+            _orderClass = o;
             db = new CaffeDataContext();
 
             //DisplayProductList();
@@ -48,7 +47,7 @@ namespace MGRMikolajczuk.View
             DockPanelProcuctList.Children.Add(tbHead);
 
 
-            foreach (var item in order._productList)
+            foreach (var item in _orderClass._productList)
             {
                 
                 string s = item.Name +"  "+ item.Price+ " zł";
@@ -61,10 +60,10 @@ namespace MGRMikolajczuk.View
 
             }
 
-            order.CalculateSum();
+            _orderClass.CalculateSum();
 
 
-            string ss = "Suma: "+order._sum+" zł";
+            string ss = "Suma: "+_orderClass._sum+" zł";
             TextBlock tbSum = fabryka.GeneraTextBlock(ss);
             tbSum.FontSize = 20;
             tbSum.TextAlignment = TextAlignment.Right;
@@ -75,8 +74,8 @@ namespace MGRMikolajczuk.View
         private void Clicktb(object sender, MouseButtonEventArgs e)
         {
             var tb = sender as TextBlock;
-            var p = order._productList.FirstOrDefault(s => s.Id_Product == (int)tb.Tag);
-            order.RemuveProduct(p);
+            var p = _orderClass._productList.FirstOrDefault(s => s.Id_Product == (int)tb.Tag);
+            _orderClass.RemuveProduct(p);
             DisplayProductList();
         }
 
@@ -128,13 +127,13 @@ namespace MGRMikolajczuk.View
             string ct = ((sender as Button).Content as TextBlock).Text;
 
             var product = db.Products.FirstOrDefault(s => s.Name.Equals(ct));
-            order.AddProduct(product);
+            _orderClass.AddProduct(product);
             DisplayProductList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            EndOrderWindow ee = new EndOrderWindow(order);
+            EndOrderWindow ee = new EndOrderWindow(_orderClass,_user);
             this.Close();
             ee.Show();
         }

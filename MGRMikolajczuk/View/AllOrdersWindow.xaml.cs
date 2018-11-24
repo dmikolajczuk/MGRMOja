@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MGRMikolajczuk.App_data;
 using MGRMikolajczuk.Model;
 
 namespace MGRMikolajczuk.View
@@ -74,7 +73,7 @@ namespace MGRMikolajczuk.View
             object orderstring = button.Tag;
             var o = _singleton.orderList.FirstOrDefault(s => s._name.Equals(orderstring));
             //Console.WriteLine(o.ToString());
-            OrderDetailWindow np = new OrderDetailWindow(o);
+            OrderDetailWindow np = new OrderDetailWindow(o,_user);
             np.Show();
         }
 

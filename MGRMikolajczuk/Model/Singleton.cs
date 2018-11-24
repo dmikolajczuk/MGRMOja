@@ -10,11 +10,11 @@ namespace MGRMikolajczuk.Model
 
     {
         private static Singleton instance;
-        public List<Order> orderList;
+        public List<OrderClass> orderList;
 
         protected Singleton()
         {
-            orderList = new List<Order>();
+            orderList = new List<OrderClass>();
         }
 
         public static Singleton Instance

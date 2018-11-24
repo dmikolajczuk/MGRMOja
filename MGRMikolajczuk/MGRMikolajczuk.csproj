@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -71,11 +71,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="App_data\Caffe.designer.cs">
+    <Compile Include="Caffe.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Caffe.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AddOrder.cs" />
     <Compile Include="Model\ComponentFabryk.cs" />
     <Compile Include="Model\RabatClasses\IRabat.cs" />
     <Compile Include="Model\RabatClasses\Rabat0.cs" />
@@ -85,7 +86,7 @@
     <Compile Include="Model\RabatClasses\Rabat50.cs" />
     <Compile Include="Model\RabatFactory.cs" />
     <Compile Include="Model\Singleton.cs" />
-    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderClass.cs" />
     <Compile Include="View\EndOrderWindow.xaml.cs">
       <DependentUpon>EndOrderWindow.xaml</DependentUpon>
     </Compile>
@@ -146,12 +147,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="App_data\Caffe.dbml">
+    <None Include="Caffe.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Caffe.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="App_data\Caffe.dbml.layout">
+    <None Include="Caffe.dbml.layout">
       <DependentUpon>Caffe.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -178,13 +179,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_data\CaffeBase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_data\CaffeBase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>CaffeBase.mdf</DependentUpon>
-    </Content>
     <Resource Include="Image\userIcon.png" />
   </ItemGroup>
   <ItemGroup>
