@@ -25,11 +25,13 @@ namespace MGRMikolajczuk.View
     {
         private OrderClass _orderClass;
         private User _user;
-        public EndOrderWindow(OrderClass oo, User u)
+        private AllOrdersWindow _allOrdersWindow;
+        public EndOrderWindow(OrderClass oo, User u, AllOrdersWindow all)
         {
             InitializeComponent();
             _orderClass = oo;
             _user = u;
+            _allOrdersWindow = all;
             DisplayOrder();
         }
 
@@ -37,6 +39,10 @@ namespace MGRMikolajczuk.View
         {
             AddOrder ad = new AddOrder();
             ad.Add(_orderClass,_user.Id_user, paymentSystem());
+            Singleton s = Singleton.Instance;
+
+            s.orderList.Remove(_orderClass);
+            _allOrdersWindow.DispayActiveOrders();
             this.Close();
         }
 
@@ -59,7 +65,7 @@ namespace MGRMikolajczuk.View
 
         private void ClickBack(object sender, RoutedEventArgs e)
         {
-            OrderDetailWindow w = new OrderDetailWindow(_orderClass,_user);
+            OrderDetailWindow w = new OrderDetailWindow(_orderClass,_user,_allOrdersWindow);
             this.Close();
             w.Show();
         }

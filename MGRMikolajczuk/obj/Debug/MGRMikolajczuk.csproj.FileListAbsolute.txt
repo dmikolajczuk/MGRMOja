@@ -22,3 +22,5 @@ C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.cspro
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.exe
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.pdb
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csprojAssemblyReference.cache
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AdminWindow.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AdminWindow.baml

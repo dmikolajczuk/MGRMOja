@@ -44,8 +44,9 @@ namespace MGRMikolajczuk.Model
                 OrderItem orderItem = new OrderItem()
                 {
                     Id_Order = orderId,
-                    Id_Product = item.Id_Product,
-                    Id_OrderItem = maxId
+                    Id_Product = item.product.Id_Product,
+                    Id_OrderItem = maxId,
+                    Quantity = item.quantity
                 };
                 db.OrderItems.InsertOnSubmit(orderItem);
             }

@@ -10,30 +10,38 @@ namespace MGRMikolajczuk.Model
     {
         public String _name;
         public double _sum;
-        public List<Product> _productList;
+        public List<ProduckQuantity> _productList;
         IRabat _rabat;
         public OrderClass()
         {
-            _productList = new List<Product>();
+            _productList = new List<ProduckQuantity>();
             _sum = 0;
             _rabat = new Rabat0();
         }
 
         public void CalculateSum()
         {
-            double? a = _productList.Sum(s => s.Price);
+            double? a = 0.0;
+            foreach (var item in _productList)
+            {
+                a += item.quantity * item.product.Price;
+            }
 
             double sum = (double)a;
             _sum = sum - _rabat.CalculateRabat(sum);
             Console.WriteLine(_sum);
         }
 
-        public void AddProduct(Product p)
+        public void AddProduct(ProduckQuantity p)
         {
-            _productList.Add(p);
+            var pp = _productList.FirstOrDefault(s => s.product.Id_Product == p.product.Id_Product);
+            if (pp == null)
+                _productList.Add(p);
+            else
+                pp.quantity++;
         }
 
-        public void RemuveProduct(Product p)
+        public void RemuveProduct(ProduckQuantity p)
         {
             _productList.Remove(p);
         }

@@ -73,7 +73,7 @@ namespace MGRMikolajczuk.View
             object orderstring = button.Tag;
             var o = _singleton.orderList.FirstOrDefault(s => s._name.Equals(orderstring));
             //Console.WriteLine(o.ToString());
-            OrderDetailWindow np = new OrderDetailWindow(o,_user);
+            OrderDetailWindow np = new OrderDetailWindow(o,_user,this);
             np.Show();
         }
 

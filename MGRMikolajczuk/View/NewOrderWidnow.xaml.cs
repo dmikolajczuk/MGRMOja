@@ -29,7 +29,6 @@ namespace MGRMikolajczuk.View
             singleton = Singleton.Instance;
             allOrdersWindow = aallw;
 
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,7 +37,6 @@ namespace MGRMikolajczuk.View
             {
                 _name = NameLabel.Text,
                 _sum = 0.00
-
             });
             allOrdersWindow.DispayActiveOrders();
             this.Close();

@@ -61,7 +61,7 @@ namespace MGRMikolajczuk
         private void ButtonLoginClick(object sender, RoutedEventArgs e)
         {
             HashClass hs = new HashClass();
-
+            Console.WriteLine(hs.GetHashString("9999"));
             CaffeDataContext db  = new CaffeDataContext();
             User user = db.Users.FirstOrDefault(s => s.Password.Equals(hs.GetHashString(_loginString)));
 
@@ -69,6 +69,12 @@ namespace MGRMikolajczuk
             {
                 MessageBox.Show("Nieprawidłowe dane logowania !");
                 _loginString = "";
+            }
+            else if (user.Name.Equals("Admin"))
+            {
+                AdminWindow aw = new AdminWindow();
+                this.Close();
+                aw.Show();
             }
             else
             {

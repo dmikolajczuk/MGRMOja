@@ -23,12 +23,14 @@ namespace MGRMikolajczuk.View
         private OrderClass _orderClass;
         private User _user;
         private CaffeDataContext db;
-        public OrderDetailWindow(OrderClass o, User u)
+        private AllOrdersWindow allWindow;
+        public OrderDetailWindow(OrderClass o, User u, AllOrdersWindow all)
         {
             InitializeComponent();
             _user = u;
             _orderClass = o;
             db = new CaffeDataContext();
+            allWindow = all;
 
             //DisplayProductList();
             DisplayCategory(null, null);
@@ -50,11 +52,11 @@ namespace MGRMikolajczuk.View
             foreach (var item in _orderClass._productList)
             {
                 
-                string s = item.Name +"  "+ item.Price+ " zł";
+                string s = item.product.Name +"  "+ item.product.Price+ " zł" + "      x" + item.quantity;
                 TextBlock tb = fabryka.GeneraTextBlock(s);
                 DockPanel.SetDock(tb, Dock.Top);
                 tb.TextAlignment = TextAlignment.Left;
-                tb.Tag = item.Id_Product;
+                tb.Tag = item.product.Id_Product;
                 tb.MouseLeftButtonUp += Clicktb;
                 DockPanelProcuctList.Children.Add(tb);
 
@@ -74,7 +76,7 @@ namespace MGRMikolajczuk.View
         private void Clicktb(object sender, MouseButtonEventArgs e)
         {
             var tb = sender as TextBlock;
-            var p = _orderClass._productList.FirstOrDefault(s => s.Id_Product == (int)tb.Tag);
+            var p = _orderClass._productList.FirstOrDefault(s => s.product.Id_Product == (int)tb.Tag);
             _orderClass.RemuveProduct(p);
             DisplayProductList();
         }
@@ -127,13 +129,15 @@ namespace MGRMikolajczuk.View
             string ct = ((sender as Button).Content as TextBlock).Text;
 
             var product = db.Products.FirstOrDefault(s => s.Name.Equals(ct));
-            _orderClass.AddProduct(product);
+            ProduckQuantity pp = new ProduckQuantity(product,1);
+            _orderClass.AddProduct(pp);
             DisplayProductList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            EndOrderWindow ee = new EndOrderWindow(_orderClass,_user);
+            EndOrderWindow ee = new EndOrderWindow(_orderClass,_user,allWindow);
+            allWindow.DispayActiveOrders();
             this.Close();
             ee.Show();
         }
