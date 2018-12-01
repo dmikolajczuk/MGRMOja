@@ -43,12 +43,6 @@ namespace MGRMikolajczuk.View
 
             DockPanelProcuctList.Children.Clear();
 
-            TextBlock tbHead = fabryka.GeneraTextBlock("Lista produktów");
-            DockPanel.SetDock(tbHead, Dock.Top);
-            tbHead.FontSize = 20;
-            DockPanelProcuctList.Children.Add(tbHead);
-
-
             foreach (var item in _orderClass._productList)
             {
                 

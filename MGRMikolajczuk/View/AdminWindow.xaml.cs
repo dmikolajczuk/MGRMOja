@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +25,6 @@ namespace MGRMikolajczuk.View
         public AdminWindow()
         {
             InitializeComponent();
-            setUserlabel();
-            UniformGridUsers_OnLoaded();
         }
 
         private void ButtonSaveUser_OnClick(object sender, RoutedEventArgs e)
@@ -72,7 +71,7 @@ namespace MGRMikolajczuk.View
         private void UniformGridUsers_OnLoaded()
         {
             CaffeDataContext db = new CaffeDataContext();
-
+            UniformGridUsers.Children.Clear();
             var users = db.Users;
             foreach (var item in users)
             {
@@ -119,6 +118,96 @@ namespace MGRMikolajczuk.View
             {
                 MessageBox.Show("Nieprawidłowe dane !");
             }
+
+        }
+
+        private void ButtonAddNewProduct_OnClick(object sender, RoutedEventArgs e)
+        {
+            CaffeDataContext db = new CaffeDataContext();
+            int IdMax = db.Products.Max(s => s.Id_Product);
+            double price;
+            if (double.TryParse(PriceTB.Text, out price) || string.IsNullOrEmpty(ProduktNameTB.Text))
+            {
+                Product p = new Product()
+                {
+                    Name = ProduktNameTB.Text,
+                    Category = CategoryComboBox.Text,
+                    Price = price,
+                    Id_Product = IdMax + 1
+                };
+                db.Products.InsertOnSubmit(p);
+                db.SubmitChanges();
+
+            }
+            else
+                MessageBox.Show("Nieprawidłowe dane !!!");
+
+            Console.WriteLine(price);
+        }
+
+
+        private void CategoryComboBox_OnLoaded()
+        {
+            CaffeDataContext db = new CaffeDataContext();
+            var result = db.Products.GroupBy(s => s.Category).ToList();
+            CategoryComboBox.Items.Clear();
+            foreach (var item in result)
+            {
+                ComboBoxItem cbItem = new ComboBoxItem();
+                cbItem.Content = item.Key;
+                CategoryComboBox.Items.Add(cbItem);
+            }
+        }
+
+
+        private void DisplayGroupOrder()
+        {
+            CaffeDataContext db = new CaffeDataContext();
+            var dd =
+                from order in db.Orders
+                group order by order.Date
+                into g
+                select new
+                {
+                    g.Key,
+                    Suma = g.Sum(p => p.Sum),
+                };
+
+            DataTable dt = new DataTable();
+            DataColumn _date = new DataColumn("Data");
+            DataColumn _sum = new DataColumn("Podsumowanie zamowień");
+            dt.Columns.Add(_date);
+            dt.Columns.Add(_sum);
+            foreach (var item in dd)
+            {
+                DataRow dr = dt.NewRow();
+                dr[0] = item.Key;
+                dr[1] = item.Suma+" zł";
+                dt.Rows.Add(dr);
+
+            }
+
+            DataOrders.ItemsSource = dt.DefaultView;
+        }
+
+        private void DataOrders_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            DisplayGroupOrder();
+        }
+
+        private void ChangeUserPass_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            UniformGridUsers_OnLoaded();
+        }
+
+        private void CategoryComboBox_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            CategoryComboBox_OnLoaded();
+        }
+
+        private void UserLabel_OnLoaded(object sender, RoutedEventArgs e)
+        {
+           setUserlabel();
         }
     }
 }

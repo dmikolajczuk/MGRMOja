@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MGRMikolajczuk.View"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="400" Width="400">
+        Title="AdminWindow" Height="400" Width="450">
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
             <Image Source="../Image/userIcon.png" Height="30"/>
-            <TextBlock x:Name="userLabel" TextAlignment="Right"  Margin="0,8,10,0" Text="USERRRR"/>
-            <Button x:Name="LogoutButton"  Content="Wyloguj" Click="LogoutButton_OnClick"/>
+            <TextBlock x:Name="userLabel" TextAlignment="Right"  Margin="0,8,10,0" Text="USERRRR" Loaded="UserLabel_OnLoaded"/>
+            <Button x:Name="LogoutButton"  Content="Wyloguj" Click="LogoutButton_OnClick" Style="{StaticResource ButtonShadow}"/>
         </StackPanel>
         <TabControl DockPanel.Dock="Top">
-            <TabItem Header="AddUsersTab">
+            <TabItem Header="Dodaj użytkownika" >
                 <Grid Margin="20,30">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -33,11 +33,11 @@
                         <Label Content="Pottórz haslo:"/>
                         <TextBox x:Name="Pass2TB"/>
                     </StackPanel>
-                    <Button Grid.Row="3" Margin="20,15" Content="Zapisz" Click="ButtonSaveUser_OnClick"/>
+                    <Button Grid.Row="3" Margin="20,15" Content="Zapisz" Click="ButtonSaveUser_OnClick" Style="{StaticResource ButtonShadow}"/>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="ChangePassTab">
+            <TabItem Header="Zmiana hasła" Loaded="ChangeUserPass_OnLoaded">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*"/>
@@ -56,8 +56,36 @@
                         <Label Content="Pottórz haslo:" />
                         <TextBox x:Name="Pass22TB"/>
                     </StackPanel>
-                    <Button Content="Zapisz" Grid.Row="3" Margin="10,5" Click="ButtonSavePassChange_OnClick"/>
+                    <Button Content="Zapisz" Grid.Row="3" Margin="10,5" Click="ButtonSavePassChange_OnClick" Style="{StaticResource ButtonShadow}"/>
                 </Grid>
+            </TabItem>
+
+            <TabItem Header="Dodaj produkt">
+                <Grid Margin="20,30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" >
+                        <Label Content="Nazwa produktu:"/>
+                        <TextBox x:Name="ProduktNameTB"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <Label Content="Cena:"/>
+                        <TextBox x:Name="PriceTB"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Loaded="CategoryComboBox_OnLoaded">
+                        <Label Content="Kategoria:"/>
+                        <ComboBox x:Name="CategoryComboBox" />
+                    </StackPanel>
+                    <Button Grid.Row="3" Margin="20,15" Content="Zapisz" Click="ButtonAddNewProduct_OnClick"  Style="{StaticResource ButtonShadow}"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Podsumowanie zamówień">
+                <DataGrid x:Name="DataOrders" Loaded="DataOrders_OnLoaded"/>
             </TabItem>
         </TabControl>
     </DockPanel>

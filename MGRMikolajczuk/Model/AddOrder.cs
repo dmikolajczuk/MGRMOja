@@ -17,12 +17,14 @@ namespace MGRMikolajczuk.Model
             var paySys = db.PaymentSystems.FirstOrDefault(s => s.Payment.Equals(paySysName));
             int maxOrderId = (int)db.Orders.Max(s => s.Id_Order);
 
+            var dateTime = DateTime.Now;
+            var date = dateTime.Date;
             Order o = new Order()
             {
                 Id_Order = maxOrderId+1,
                 Id_User = userId,
                 Sum = orderClass._sum,
-                Date = DateTime.Now,
+                Date = date,
                 PaymentSystem = paySys.Id_Payment,
                 Ended = true,
                 Name = orderClass._name

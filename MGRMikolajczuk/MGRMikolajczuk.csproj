@@ -79,6 +79,7 @@
     <Compile Include="Model\AddOrder.cs" />
     <Compile Include="Model\CheckPassAndLogin.cs" />
     <Compile Include="Model\ComponentFabryk.cs" />
+    <Compile Include="Model\GroupSUM.cs" />
     <Compile Include="Model\ProduckQuantity.cs" />
     <Compile Include="Model\RabatClasses\IRabat.cs" />
     <Compile Include="Model\RabatClasses\Rabat0.cs" />

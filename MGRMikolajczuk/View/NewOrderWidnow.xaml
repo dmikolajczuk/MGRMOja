@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MGRMikolajczuk.View"
         mc:Ignorable="d"
-        Title="NewOrder" Height="300" Width="500">
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
+        Title="NewOrder" Height="300" Width="400">
+
+    <UniformGrid Columns="4" Rows="4" Margin="10,10">
+        <Button Click="NrClick" Content="Stolik nr 1" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 2" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 3" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 4" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 5" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 6" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 8" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 9" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 10" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 11" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 12" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 13" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 14" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 15" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Click="NrClick" Content="Stolik nr 16" Style="{StaticResource ButtonShadow}" Margin="5,5"/>
+        <Button Content="Powrót" Style="{StaticResource ButtonShadow}" Margin="5,5" Click="ButtonBack_Click"/>
+    </UniformGrid>
+    <!--<Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -16,5 +35,5 @@
             <TextBox  x:Name="NameLabel" Text="" FontSize="20" Width="100" />
         </StackPanel>
         <Button Grid.Row="1" Margin="20,20" Height="30" Width="200" Content="Dodaj zamówienie" Style="{StaticResource ButtonShadow}" Click="Button_Click"/>
-    </Grid>
+    </Grid>-->
 </Window>

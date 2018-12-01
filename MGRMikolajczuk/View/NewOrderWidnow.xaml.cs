@@ -31,14 +31,20 @@ namespace MGRMikolajczuk.View
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void NrClick(object sender, RoutedEventArgs e)
         {
+            Button b = sender as Button;;
             singleton.orderList.Add(new OrderClass()
             {
-                _name = NameLabel.Text,
+                _name = b.Content.ToString(),
                 _sum = 0.00
             });
             allOrdersWindow.DispayActiveOrders();
+            this.Close();
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }
