@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -209,6 +210,13 @@ namespace MGRMikolajczuk.View
                          + String.Format("{0:0.00}", statistic.Median(list)) + " PLN";
 
             DataOrders.ItemsSource = dt.DefaultView;
+            List<KeyValuePair<DateTime, double>> ll = new List<KeyValuePair<DateTime, double>>();
+            foreach (var item in list)
+            {
+                ll.Add(new KeyValuePair<DateTime, double>(item._date,item._sum));
+            }
+            
+            myChart.DataContext = ll;
         }
 
 

@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" 
         xmlns:local="clr-namespace:MGRMikolajczuk.View" 
         mc:Ignorable="d"
         Title="Panel Administratora" 
@@ -101,6 +103,10 @@
                 </DockPanel>
             </TabItem>
             <TabItem Header="Wykres">
+                <chartingToolkit:Chart  x:Name="myChart" >
+                    <chartingToolkit:LineSeries DependentValuePath="Value" IndependentValuePath="Key" 
+                                                ItemsSource="{Binding}" Title="Zarobki w PLN"/>
+                </chartingToolkit:Chart>
 
             </TabItem>
         </TabControl>

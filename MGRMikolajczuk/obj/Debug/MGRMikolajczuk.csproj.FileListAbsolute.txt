@@ -25,3 +25,8 @@ C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.cspro
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.exe
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.pdb
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csprojAssemblyReference.cache
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\System.Windows.Controls.Input.Toolkit.dll
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\System.Windows.Controls.Layout.Toolkit.dll
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\WPFToolkit.dll
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csproj.CopyComplete

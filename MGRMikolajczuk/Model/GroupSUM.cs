@@ -8,8 +8,8 @@ namespace MGRMikolajczuk.Model
 {
    public class GroupSUM : IComparable<GroupSUM>
     {
-        public double _sum;
-        public DateTime _date;
+        public double _sum { get; set; }
+        public DateTime _date { get; set; }
 
         public GroupSUM(double s, DateTime d)
         {
