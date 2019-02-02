@@ -90,6 +90,8 @@
     <Compile Include="Model\RabatFactory.cs" />
     <Compile Include="Model\Singleton.cs" />
     <Compile Include="Model\OrderClass.cs" />
+    <Compile Include="Model\Statistic.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
@@ -193,6 +195,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\back.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

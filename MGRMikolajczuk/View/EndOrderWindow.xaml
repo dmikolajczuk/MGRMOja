@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MGRMikolajczuk.View"
         mc:Ignorable="d"
-        Title="EndOrderWindow" Height="450" Width="450">
+        Title="Zakończ zamówienie" Height="450" Width="450" MinHeight="450" MinWidth="460"
+        Icon="../Image/Icon.png">
+    <Window.Background>
+        <ImageBrush ImageSource="../Image/back.jpg"/>
+    </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -16,30 +20,31 @@
         </Grid.RowDefinitions>
 
         <StackPanel>
-            <TextBlock x:Name="TextBlockName" Text="Nazwa" FontSize="30" TextAlignment="Center"/>
-            <TextBlock x:Name="TextBlockSum" Text="Suma" FontSize="20" FontWeight="Bold" TextAlignment="Center" Foreground="Red"/>
+
+            <TextBlock x:Name="TextBlockName" Text="Nazwa" FontSize="30" TextAlignment="Center" Style="{StaticResource tbstyle}"/>
+            <TextBlock x:Name="TextBlockSum" Text="Suma" FontSize="25" FontWeight="Bold" TextAlignment="Center" Foreground="Red"/>
         </StackPanel>
         <GroupBox Grid.Row="1">
             <GroupBox.Header>
-                <TextBlock Text="Rodzaj płatności" FontSize="20"/>
+                <TextBlock Text="Rodzaj płatności" FontSize="20" Style="{StaticResource tbstyle}"/>
             </GroupBox.Header>
             <UniformGrid Rows="2" Columns="2">
-                <RadioButton x:Name="CartRadioButton" Content="Karta"/>
-                <RadioButton x:Name="CashRadioButton" Content="Gotówka" IsChecked="True"/>
-                <RadioButton x:Name="NoneRadioButton" Content="Koszt firmy"/>
+                <RadioButton x:Name="CartRadioButton" Content="Karta" Foreground="{StaticResource myWhite}"/>
+                <RadioButton x:Name="CashRadioButton" Content="Gotówka" IsChecked="True" Foreground="{StaticResource myWhite}"/>
+                <RadioButton x:Name="NoneRadioButton" Content="Koszt firmy" Foreground="{StaticResource myWhite}"/>
             </UniformGrid>
         </GroupBox>
 
         <GroupBox Grid.Row="2">
             <GroupBox.Header>
-                <TextBlock Text="Rabat" FontSize="20"/>
+                <TextBlock Text="Rabat" FontSize="20" Style="{StaticResource tbstyle}"/>
             </GroupBox.Header>
             <UniformGrid Rows="2">
-                <RadioButton x:Name="_0RabatRadioButton" Content="Brak rabatu" IsChecked="True" Checked="ChekedRabat"/>
-                <RadioButton x:Name="_10RabatRadioButton" Content="10%" Checked="ChekedRabat"/>
-                <RadioButton x:Name="_20RabatRadioButton" Content="20%" Checked="ChekedRabat"/>
-                <RadioButton x:Name="_30RabatRadioButton" Content="30%" Checked="ChekedRabat"/>
-                <RadioButton x:Name="_50RabatRadioButton" Content="50%(Pracowniczy)" Checked="ChekedRabat"/>
+                <RadioButton x:Name="_0RabatRadioButton" Content="Brak rabatu" IsChecked="True" Checked="ChekedRabat" Foreground="{StaticResource myWhite}"/>
+                <RadioButton x:Name="_10RabatRadioButton" Content="10%" Checked="ChekedRabat" Foreground="{StaticResource myWhite}"/>
+                <RadioButton x:Name="_20RabatRadioButton" Content="20%" Checked="ChekedRabat" Foreground="{StaticResource myWhite}"/>
+                <RadioButton x:Name="_30RabatRadioButton" Content="30%" Checked="ChekedRabat" Foreground="{StaticResource myWhite}"/>
+                <RadioButton x:Name="_50RabatRadioButton" Content="50%(Pracowniczy)" Checked="ChekedRabat" Foreground="{StaticResource myWhite}"/>
             </UniformGrid>
         </GroupBox>
         <UniformGrid Grid.Row="4" Columns="2">

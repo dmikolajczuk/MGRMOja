@@ -3,11 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MGRMikolajczuk"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Zaloguj" Height="600" Width="900" MinHeight="600" MinWidth="900"
+        Icon="../Image/Icon.png">
+    <Window.Background>
+        <ImageBrush ImageSource="../Image/back.jpg"/>
+    </Window.Background>
     <DockPanel>
-        <TextBlock DockPanel.Dock="Top" Text="My Caffe" FontSize="35" FontFamily="Algerian" HorizontalAlignment="Center"/>
+        <TextBlock DockPanel.Dock="Top" Text="My Caffe" 
+                   FontSize="35" FontFamily="Algerian" HorizontalAlignment="Center" Foreground="#C5C3BA"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -20,7 +24,8 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <Image Source="../image/caffeGlass.png" Grid.Row="0" Margin="40,0,0,0"/>
-                <TextBox x:Name="loginBox" MaxLength="4" Text="1234" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+                <TextBox x:Name="loginBox" MaxLength="4" Text="{Binding Login}"  Background="Transparent"
+                         Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
                 <Button Content="Zaloguj" Grid.Row="2" Margin="100,0,100,10" FontSize="20" Click="ButtonLoginClick" Style="{StaticResource ButtonShadow}"/>
             </Grid>
             <Grid Grid.Column="1" Margin="10,10">

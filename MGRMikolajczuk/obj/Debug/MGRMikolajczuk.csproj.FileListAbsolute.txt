@@ -1,7 +1,7 @@
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.exe.config
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.exe
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\bin\Debug\MGRMikolajczuk.pdb
-C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csprojAssemblyReference.cache
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\LoginWindow.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AdminWindow.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\EndOrderWindow.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\LoginWindow.g.cs
@@ -9,12 +9,12 @@ C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\NewOrderWidnow.
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderDetailWindow.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AllOrdersWindow.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\App.g.cs
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk_MarkupCompile.cache
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk_MarkupCompile.lref
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\App.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AdminWindow.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\EndOrderWindow.baml
-C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\LoginWindow.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\NewOrderWidnow.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\OrderDetailWindow.baml
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\View\AllOrdersWindow.baml
@@ -24,3 +24,4 @@ C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.cspro
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csproj.CoreCompileInputs.cache
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.exe
 C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.pdb
+C:\Users\Ja\Desktop\MGRMikolajczuk\MGRMikolajczuk\obj\Debug\MGRMikolajczuk.csprojAssemblyReference.cache

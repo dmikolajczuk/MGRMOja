@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MGRMikolajczuk.Model
 {
-   public class GroupSUM
+   public class GroupSUM : IComparable<GroupSUM>
     {
         public double _sum;
         public DateTime _date;
@@ -15,6 +15,11 @@ namespace MGRMikolajczuk.Model
         {
             this._sum = s;
             this._date = d;
+        }
+
+        public int CompareTo(GroupSUM other)
+        {
+            return _sum.CompareTo(other._sum);
         }
     }
 }

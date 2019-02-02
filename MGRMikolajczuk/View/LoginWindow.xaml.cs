@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
+using MGRMikolajczuk.Annotations;
 using MGRMikolajczuk.Model;
 using MGRMikolajczuk.View;
 
@@ -61,7 +64,6 @@ namespace MGRMikolajczuk
         private void ButtonLoginClick(object sender, RoutedEventArgs e)
         {
             HashClass hs = new HashClass();
-            Console.WriteLine(hs.GetHashString("9999"));
             CaffeDataContext db  = new CaffeDataContext();
             User user = db.Users.FirstOrDefault(s => s.Password.Equals(hs.GetHashString(_loginString)));
 

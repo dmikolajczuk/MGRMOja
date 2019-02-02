@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:MGRMikolajczuk"
              StartupUri="View/LoginWindow.xaml">
     <Application.Resources>
+        <SolidColorBrush  Color="#C5C3BA" x:Key="myWhite" />
+
+        <Style x:Key="tbstyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{StaticResource myWhite}"/>
+        </Style>
+
         <Style x:Key="MyFocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>

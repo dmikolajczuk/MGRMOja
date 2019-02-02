@@ -167,28 +167,50 @@ namespace MGRMikolajczuk.View
                 from order in db.Orders
                 group order by order.Date
                 into g
-                select new
-                {
-                    g.Key,
-                    Suma = g.Sum(p => p.Sum),
-                };
+                select new GroupSUM((double)g.Sum(p => p.Sum), (DateTime)g.Key);
+
 
             DataTable dt = new DataTable();
             DataColumn _date = new DataColumn("Data");
-            DataColumn _sum = new DataColumn("Podsumowanie zamowień");
+            DataColumn _daySum = new DataColumn("Podsumowanie dnia");
+
             dt.Columns.Add(_date);
-            dt.Columns.Add(_sum);
+            dt.Columns.Add(_daySum);
             foreach (var item in dd)
             {
-                DataRow dr = dt.NewRow();
-                dr[0] = item.Key;
-                dr[1] = item.Suma+" zł";
-                dt.Rows.Add(dr);
 
+                DataRow dr = dt.NewRow();
+                DateTime data = (DateTime)item._date;
+                dr[0] = data.ToString("yyy-MM-dd");
+                dr[1] = item._sum+" PLN";
+                dt.Rows.Add(dr);
+                
+                int a = (int)data.DayOfWeek;
             }
+
+            var list = dd.ToList();
+            Statistic statistic = new Statistic();
+
+            predictiontb.Text = "Przwidywany zarobek następnego dnia : " 
+                                + String.Format("{0:0.00}",statistic.GetWeightAvg(list))+" PLN";
+
+            AVGtb.Text = "Średnia ze wszytkichdni : "
+                         + String.Format("{0:0.00}", statistic.GetAvg(list)) + " PLN";
+
+            GroupSUM max = statistic.GetMaxvalue(list);
+            MAXtb.Text = "Maksymalny zarobek : "
+                         + String.Format("{0:0.00}",max._sum) + " PLN  dnia  "+max._date.ToString("yyy-MM-dd");
+
+            GroupSUM min = statistic.GetMINvalue(list);
+            MINtb.Text = "Maksymalny zarobek : "
+                         + String.Format("{0:0.00}", min._sum) + " PLN  dnia  " + min._date.ToString("yyy-MM-dd");
+
+            MINtb.Text = "Mediana: "
+                         + String.Format("{0:0.00}", statistic.Median(list)) + " PLN";
 
             DataOrders.ItemsSource = dt.DefaultView;
         }
+
 
         private void DataOrders_OnLoaded(object sender, RoutedEventArgs e)
         {

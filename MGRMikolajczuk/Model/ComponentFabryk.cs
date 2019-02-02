@@ -15,9 +15,12 @@ namespace MGRMikolajczuk.Model
 
         public TextBlock GeneraTextBlock(string name)
         {
-            return new TextBlock() {Text = name,
+            return new TextBlock() {
+                Text = name,
                 TextAlignment = TextAlignment.Center,
-                TextWrapping = TextWrapping.Wrap };
+                TextWrapping = TextWrapping.Wrap,
+                Style = Application.Current.FindResource("tbstyle") as Style
+            };
         }
 
         public Button GenerateButton(string name)

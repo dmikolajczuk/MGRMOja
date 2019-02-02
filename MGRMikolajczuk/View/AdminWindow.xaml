@@ -3,9 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MGRMikolajczuk.View"
+        xmlns:local="clr-namespace:MGRMikolajczuk.View" 
         mc:Ignorable="d"
-        Title="AdminWindow" Height="400" Width="450">
+        Title="Panel Administratora" 
+        Height="450" Width="450" MinHeight="450" MinWidth="450"
+        Icon="../Image/Icon.png">
+    <Window.Resources>
+        <local:AdminWindow x:Key="myData"/>
+    </Window.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
             <Image Source="../Image/userIcon.png" Height="30"/>
@@ -85,7 +90,18 @@
             </TabItem>
 
             <TabItem Header="Podsumowanie zamówień">
-                <DataGrid x:Name="DataOrders" Loaded="DataOrders_OnLoaded"/>
+                <DockPanel>
+                    <DataGrid x:Name="DataOrders" Loaded="DataOrders_OnLoaded" 
+                          HorizontalAlignment="Center" VerticalAlignment="Top" DockPanel.Dock="Top"/>
+                    <TextBlock DockPanel.Dock="Top" x:Name="predictiontb"/>
+                    <TextBlock DockPanel.Dock="Top" x:Name="AVGtb"/>
+                    <TextBlock DockPanel.Dock="Top" x:Name="MAXtb"/>
+                    <TextBlock DockPanel.Dock="Top" x:Name="MINtb"/>
+                    <TextBlock DockPanel.Dock="Top" x:Name="Mediantb"/>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Wykres">
+
             </TabItem>
         </TabControl>
     </DockPanel>

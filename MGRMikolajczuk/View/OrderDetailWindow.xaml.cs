@@ -82,10 +82,11 @@ namespace MGRMikolajczuk.View
 
             var products = db.Products;
             var result = products.GroupBy(test => test.Category).ToList();
-
+            var bc = new BrushConverter();
             foreach (var item in result)
             {
                 TextBlock tb = fabryka.GeneraTextBlock(item.Key);
+                tb.Foreground = (Brush)bc.ConvertFrom("#000000");
                 Button b = fabryka.GenerateButton(tb);
                 b.Click += DisplayProduct;
                 UniformGridNewProduct.Children.Add(b);
@@ -100,12 +101,11 @@ namespace MGRMikolajczuk.View
             CaffeDataContext db = new CaffeDataContext();
             string ct = ((sender as Button).Content as TextBlock).Text;
             var products = db.Products.Where(s=> s.Category.Equals(ct));
-
+            var bc = new BrushConverter();
             foreach (var item in products)
             {
-
-
                 TextBlock tb = fabryka.GeneraTextBlock(item.Name);
+                tb.Foreground = (Brush)bc.ConvertFrom("#000000");
                 Button b = fabryka.GenerateButton(tb);
                 b.Tag = item.Price;
                 b.Click += AddProduct;
